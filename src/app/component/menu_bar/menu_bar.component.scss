@@ -1,0 +1,82 @@
+.form-inline 
+{
+    min-width: 300px;
+    position: relative;
+    margin-right:1rem;
+    .form-control
+    {
+        max-width: 400px;
+        min-width: 300px;
+        margin: 0px; 
+        padding: 1rem; 
+        outline: none;  
+        color:black;
+    }
+    button { 
+        position: absolute; 
+        top: 0; 
+        right: 4px; 
+        z-index: 2; 
+        border: none; 
+        top: 2px; 
+        cursor: pointer; 
+        transform: translateX(2px); 
+    } 
+    .icons
+    {
+        width:2rem !important;
+        height:2rem !important;
+    }
+    button:hover
+    {
+        background: #007bff;
+        color:whitesmoke
+    }
+}
+
+.bg-colors
+{
+    background-color: #faebeb;
+    color:#1e2d7d !important;
+
+    .nav-item,.nav-link
+    {
+        color:#1e2d7d !important;
+    }
+}
+.bar-item
+{
+    .nav-item,.nav-link
+    {
+        color:#1e2d7d !important;
+        text-transform: capitalize;
+    }
+}
+.dropdown-toggle::after {
+    margin-left:0.5rem;
+    margin-top:1rem !important;
+}
+
+.dropdown-menu
+{
+    min-width:200px !important;
+    color:#1e2d7d !important;
+    text-transform: capitalize;
+    background-color:#faebeb !important;
+}
+.sm-only
+{
+    li
+    {
+     list-style: none ;
+     display: inline;
+     padding:0 !important;
+     margin: 0 !important;
+    }
+  
+}
+.bg-nav
+{
+    background-color:#faebeb;
+    color:#1e2d7d !important;
+}

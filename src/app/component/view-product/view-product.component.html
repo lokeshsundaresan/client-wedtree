@@ -1,0 +1,77 @@
+<div class="container mt-5">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a [routerLink]="['/']">Home</a></li>
+      <li class="breadcrumb-item">
+        <a [routerLink]="['/collection',product.dropcatlog_name]"
+          >{{product.dropcatlog_name}}</a
+        >
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        {{product.product_name}}
+      </li>
+    </ol>
+  </nav>
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <img
+            class="card-img-top"
+            src="https://images.unsplash.com/photo-1495121553079-4c61bcce1894?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-6">
+      <div class="card">
+        <h4 class="font-weight-bolder product-name">
+          {{product.product_name}}-{{product.product_id}}
+        </h4>
+        <div class="card-body">
+          <div class="card-title price">
+            Price <span class="value">{{product.price}}</span>
+          </div>
+          <div class="card-title descri">Description</div>
+          <p class="brief">{{product.description}}</p>
+        </div>
+        <div class="card-title min-quan">
+          Minimum Quantity:<span class="px-3 text-dark"
+            >{{product.min_order}}</span
+          >
+        </div>
+        <div class="card-tile button-qu">
+          Quantity
+          <button class="btn btn-primary" (click)="decrement()">-</button>
+          <input
+            type="number"
+            class="btn btn-light quantity-btn"
+            value="{{quantity}}"
+          />
+          <button class="btn btn-primary" (click)="increment()">+</button>
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="quantityerror">
+          Quantity must not lesser than Minimum Quantity Required
+        </div>
+        <div class="card-title text-center">
+          <button class="btn btn-md w-75 btn-info my-3">Add Cart</button>
+        </div>
+        <div class="card-footer">
+          <div class="card-title extra">Assisted checkout</div>
+          <p class="extra-content">
+            Need help to select the right gift? Need information on delivery
+            time? Need gifts faster? Talk to us.
+          </p>
+          <div class="text-center">
+            <button class="btn btn-primary text-light mx-2">
+              <img src="../../../assert/whatsapp.svg" />
+            </button>
+            <a class=" btn btn-primary text-light" href="tel:9865167788"
+              >+91 9865167788</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

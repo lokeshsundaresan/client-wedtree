@@ -1,0 +1,100 @@
+<!-- Image and text -->
+<nav class="navbar navbar-light bg-colors navbar-expand-md">
+  <button
+    class="navbar-toggler bg-colors text-info "
+    type="button"
+    data-toggle="collapse"
+    data-target="#menu_bar"
+    aria-controls="menu_bar"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon "></span>
+  </button>
+  <a class="navbar-brand mr-auto ml-2" [routerLink]="['/']">
+    <img
+      src="../../../assert/twitter.svg"
+      width="30"
+      height="30"
+      class="d-inline-block align-top"
+      alt=""
+    />
+    Tulip Craft
+  </a>
+  <ul
+    class="sm-only mt-2 mt-sm-0  d-none d-xs-block d-sm-block d-md-none d-lg-none d-xl-none"
+  >
+    <li class="nav-item">
+      <a class="nav-link navbar-brand"
+        ><img src="../../../assert/person.svg" class="d-inline-block align-top"
+      /></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link navbar-brand"
+        ><img
+          src="../../../assert/shopping-bag.svg"
+          class="d-inline-block align-top"
+      /></a>
+    </li>
+  </ul>
+
+  <div class="collapse navbar-collapse d-none d-md-block d-lg-block">
+    <ul class="navbar-nav ml-auto mt-2 mt-lg-0 mr-3">
+      <form class="form-inline  my-2 my-md-0">
+        <input
+          class="form-control input-lg mr-sm-2"
+          type="search"
+          placeholder="Search"
+        />
+        <button class="btn btn-success mx-2 my-sm-0" type="button">
+          Search
+        </button>
+      </form>
+      <li class="nav-item active">
+        <a class="nav-link navbar-brand" href="#"
+          ><img
+            src="../../../assert/person.svg"
+            class="d-inline-block align-top"
+          />Account<span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link navbar-brand" href="#"
+          ><img
+            src="../../../assert/shopping-bag.svg"
+            class="d-inline-block align-top"
+          />Cart<span class="sr-only">(current)</span></a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="navbar navbar-expand-md bg-nav bar-item" data-spy="affix">
+  <div class="collapse navbar-collapse text-color" id="menu_bar">
+    <ul class=" navbar-nav mr-auto">
+      <!--Catlog list-->
+      <div *ngFor="let item of menulog">
+        <li class="nav-item btn" ngbDropdown [open]="false">
+          <a class="nav-link" id="submenu" display="submenu">
+            <span ngbDropdownToggle>{{item.catlog_name}}</span>
+          </a>
+          <!--DropDown items-->
+
+          <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="profile">
+            <div *ngFor="let drop of droplog">
+              <ng-container *ngIf="drop.catlog_name==item.catlog_name">
+                <a
+                  ngbDropdownItem
+                  [routerLink]="['/collection',drop.dropcatlog_name]"
+                  >{{drop.dropcatlog_name}}</a
+                >
+              </ng-container>
+            </div>
+          </div>
+        </li>
+      </div>
+    </ul>
+  </div>
+</div>
+<router-outlet></router-outlet>
