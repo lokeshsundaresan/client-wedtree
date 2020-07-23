@@ -9,7 +9,7 @@ import { ProductCatlog } from "../../interface/productcatlog";
 })
 export class Categories implements OnInit {
   private sub: any;
-  private id: string;
+  public id: string;
   productlog: ProductCatlog[] = [];
 
   constructor(private route: ActivatedRoute, private menu: Menu_Service) {}
