@@ -24,9 +24,6 @@ export class Menu_barComponent implements OnInit {
     });
     this.timeout();
   }
-  routing(id) {
-    this.router.navigateByUrl(["/collection", id]);
-  }
   timeout() {
     setTimeout(() => {
       this.ngOnInit();
