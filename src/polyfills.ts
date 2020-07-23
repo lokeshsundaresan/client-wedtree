@@ -17,6 +17,12 @@
 /***************************************************************************************************
  * BROWSER POLYFILLS
  */
+ 
+import '@angular/localize/init';
+
+(window as any).global = window;
+// @ts-ignore
+window.Buffer = window.Buffer || require('buffer').Buffer;
 
 /** IE9, IE10 and IE11 requires all of the following polyfills. **/
 // import 'core-js/es6/symbol';
