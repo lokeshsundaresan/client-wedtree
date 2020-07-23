@@ -7,7 +7,7 @@ import { DropCatlog } from "../../interface/dropdown";
   templateUrl: "./footer.component.html",
   styleUrls: ["./footer.component.scss"]
 })
-export class Footer implements OnInit {
+export class Footer  {
   explore: DropCatlog[] = [];
   constructor(private menu: Menu_Service) {
     this.menu.dropmenuvalue.subscribe(data => {
