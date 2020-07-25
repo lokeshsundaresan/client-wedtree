@@ -20,11 +20,8 @@ export class Categories implements OnInit {
       // In a real app: dispatch action to load the details here.
     });
     this.menu.productvalue.subscribe(data => {
-      for (let i = 0; i < data.length; i++) {
-        if (data[i].dropcatlog_name === this.id) {
-          this.productlog.push(data[i]);
-        }
-      }
+          this.productlog=data;
+     
     });
   }
 }
